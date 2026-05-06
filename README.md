@@ -8,7 +8,7 @@ Kunno es una plataforma que gestiona operaciones financieras entre agencias. Cad
 
 ## Objetivo
 
-Implementar un sistema de comisiones para operaciones entre agencias, compuesto por **3 módulos** descritos en [`MODULES.md`](MODULES.md).
+Implementar un sistema de comisiones para operaciones entre agencias inmobiliarias / comercializadoras, compuesto por **3 módulos** descritos en [`MODULES.md`](MODULES.md).
 
 ## Requisitos
 
