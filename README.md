@@ -31,14 +31,14 @@ php artisan migrate --seed
 ## Estructura
 
 ```
-routes/api.php                              ← 3 rutas definidas, sin implementar
-database/migrations/create_agencies_table  ← Ya creada, no tocar
-database/seeders/DatabaseSeeder.php        ← 2 agencias + operación de prueba
-app/Models/Operation.php                   ← Esqueleto vacío
-app/Services/CommissionService.php         ← TODO con guía de pasos
-app/Jobs/ProcessCommissionPayment.php      ← Esqueleto vacío
-app/Http/Controllers/OperationController  ← 3 métodos vacíos
-tests/Feature/CommissionTest.php           ← 9 tests listos
+routes/api.php                              
+database/migrations/create_agencies_table 
+database/seeders/DatabaseSeeder.php        
+app/Models/Operation.php                   
+app/Services/CommissionService.php        
+app/Jobs/ProcessCommissionPayment.php      
+app/Http/Controllers/OperationController  
+tests/Feature/CommissionTest.php          
 ```
 
 ## Cómo entregar
@@ -62,5 +62,5 @@ tests/Feature/CommissionTest.php           ← 9 tests listos
 2–3 horas. No buscamos perfección, buscamos razonamiento claro.
 
 ---
+¿Dudas? Escribe a [blemus@kunno.cloud / cmartinez@kunno.cloud]
 
-¿Dudas? Escribe a [tech@kunno.com](mailto:tech@kunno.com)
