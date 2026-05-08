@@ -13,20 +13,36 @@ class ProcessCommissionPayment implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    // TODO: Definir número máximo de intentos
-    // public int $tries = ?;
+    /**
+     * Numero maximo de reintentos si el Job falla.
+     * TODO: confirmar si 3 es el valor correcto
+     */
+    public int $tries = 3;
 
-    // TODO: Definir backoff en segundos entre reintentos
-    // public int $backoff = ?;
-
-    // TODO: Inyectar Operation en el constructor
+    public function __construct(
+        private readonly Operation $operation
+    ) {}
 
     /**
-     * TODO: Inyectar CommissionService y llamar a process().
-     *       Si falla tras los intentos, loguear el error con Log::error().
+     * TODO: implementar
+     *
+     * Pasos:
+     * 1. Cambiar estado de commission_logs a "processing"
+     * 2. Simular llamada a Stripe (sleep(1) o throw aleatorio)
+     * 3. Exito: cambiar estado a "paid"
+     * 4. Fallo: cambiar a "failed" y relanzar excepcion para reintento
      */
     public function handle(): void
     {
-        // Tu implementación aquí
+        throw new \RuntimeException('ProcessCommissionPayment::handle() pendiente.');
+    }
+
+    /**
+     * Se ejecuta cuando se agotan todos los reintentos.
+     * TODO: que hacer cuando fallan los 3 intentos
+     */
+    public function failed(\Throwable $exception): void
+    {
+        // TODO: implementar
     }
 }

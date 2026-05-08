@@ -3,38 +3,47 @@
 namespace App\Http\Controllers;
 
 use App\Models\Operation;
+use App\Services\CommissionService;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class OperationController extends Controller
 {
+    public function __construct(
+        private readonly CommissionService $commissionService
+    ) {}
+
     /**
-     * TODO: Retornar todas las operaciones en formato JSON.
-     * GET /api/operations
+     * POST /api/operations/{operation}/close
+     * HTTP 200: logs de comisiones calculadas
+     * HTTP 409: operacion no esta en "open"
+     * HTTP 422: porcentajes no suman 100%
      */
-    public function index(): JsonResponse
+    public function close(Operation $operation): JsonResponse
     {
-        // Tu implementación aquí
+        // TODO: implementar
+        throw new \RuntimeException('OperationController::close() pendiente.');
     }
 
     /**
-     * TODO: Validar el payload (ver MODULES.md), crear la operación
-     *       con status 'pending' y retornarla con código 201.
-     * POST /api/operations
+     * GET /api/operations/{operation}/commissions
+     * HTTP 200: lista de commission_logs
      */
-    public function store(Request $request): JsonResponse
+    public function commissions(Operation $operation): JsonResponse
     {
-        // Tu implementación aquí
+        // TODO: implementar
+        throw new \RuntimeException('OperationController::commissions() pendiente.');
     }
 
     /**
-     * TODO: Validar que la operación exista (404 si no) y que su status
-     *       sea 'pending' (422 si no). Despachar ProcessCommissionPayment
-     *       y retornar 202 con { "message": "Processing queued" }.
-     * POST /api/operations/{operation}/process
+     * POST /api/operations/{operation}/pay
+     * Despacha Job ASINCRONO.
+     * HTTP 202: respuesta inmediata con estado "processing"
+     * HTTP 409: operacion no esta en "closed"
      */
-    public function process(Operation $operation): JsonResponse
+    public function pay(Operation $operation): JsonResponse
     {
-        // Tu implementación aquí
+        // TODO: implementar
+        throw new \RuntimeException('OperationController::pay() pendiente.');
     }
 }

@@ -3,17 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Builder;
 
+/**
+ * Modelo Operation — completar relaciones y atributos en el Modulo 1.
+ */
 class Operation extends Model
 {
-    // TODO: Define $fillable con los campos de la migración
-
-    // TODO: Define $casts para amount, commission_rate y commission_amount
-
-    // TODO: Implementar scope pending()
-    // public function scopePending(Builder $query): Builder {}
-
-    // TODO: Implementar relación con Agency
-    // public function agency() {}
+    // TODO: definir $fillable
+    // TODO: definir $casts para status y closed_at
+    // TODO: definir relaciones: agency(), participants(), commissionLogs()
 }
